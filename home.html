@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html class="" lang="zh-tw" style="height: 100%;">
+
+<head>
+	<meta charset="utf-8">
+	<title>AMY Hotel</title>
+
+	<meta content="index,follow" name="robots">
+	<meta content="width=device-width, minimum-scale=0.25, maximum-scale=1.6, initial-scale=1.0" name="viewport">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<link href="/hotel/img/favicon.ico?1551515016" rel="icon" type="image/vnd.microsoft.icon">
+	<link href="/hotel/img/favicon.ico?1551515016" rel="shortcut icon" type="image/x-icon">
+	<link href="/hotel/themes/hotel-reservation-theme/css/global.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/js/jquery/ui/themes/base/jquery.ui.core.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/js/jquery/ui/themes/base/jquery.ui.datepicker.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/js/jquery/ui/themes/base/jquery.ui.theme.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/themes/hotel-reservation-theme/css/autoload/highdpi.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/themes/hotel-reservation-theme/css/autoload/responsive-tables.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/themes/hotel-reservation-theme/css/autoload/uniform.default.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/js/jquery/plugins/fancybox/jquery.fancybox.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/modules/hotelreservationsystem/views/css/HotelReservationFront.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/themes/hotel-reservation-theme/css/modules/blocknewsletter/blocknewsletter.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/modules/hotelreservationsystem/views/css/datepickerCustom.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/modules/hotelreservationsystem/views/css/searchblock.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/js/jquery/ui/themes/base/jquery.ui.slider.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/themes/hotel-reservation-theme/css/modules/blockcart/blockcart.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/js/jquery/plugins/bxslider/jquery.bxslider.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/themes/hotel-reservation-theme/css/modules/blockuserinfo/blockuserinfo.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/themes/hotel-reservation-theme/css/modules/blocklanguages/blocklanguages.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/themes/hotel-reservation-theme/css/modules/blockcurrencies/blockcurrencies.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/themes/hotel-reservation-theme/css/modules/productcomments/productcomments.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/modules/blocknavigationmenu/views/css/blocknavigation.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/modules/hotelreservationsystem/libs/owl.carousel/assets/owl.carousel.min.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/modules/hotelreservationsystem/libs/owl.carousel/assets/owl.theme.default.min.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/modules/wkabouthotelblock/views/css/WkAboutHotelBlockFront.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/modules/wkhotelfeaturesblock/views/css/wkHotelFeaturesBlockFront.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/modules/wkhotelroom/views/css/WkHotelRoomBlockFront.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/modules/wktestimonialblock/views/css/WkTestimonialBlockFront.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/modules/wkfooterexploreblock/views/css/wkFooterExploreBlockFront.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/modules/wkfooteraboutblock/views/css/wkFooterAboutBlockFront.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/modules/wkfooterpaymentblock/views/css/wkFooterPaymentBlockFront.css" media="all" rel="stylesheet" type="text/css">
+	<script type="text/javascript">
+		var CUSTOMIZE_TEXTFIELD = 1;
+		var FancyboxI18nClose = 'Close';
+		var FancyboxI18nNext = 'Next';
+		var FancyboxI18nPrev = 'Previous';
+		var adults_txt = 'Adults';
+		var ajax_allowed = true;
+		var ajaxsearch = true;
+		var autocomplete_search_url = 'https://amy.com/hotel/module/wkroomsearchblock/autocompletesearch';
+		var baseDir = 'https://amy.com/hotel/';
+		var baseUri = 'https://amy.com/hotel/';
+		var capacity_txt = 'Capacity';
+		var check_in_time_cond = 'Please enter Check In time';
+		var check_out_time_cond = 'Please enter Check Out time';
+		var children_txt = 'Children';
+		var contentOnly = false;
+		var currency = {
+			"id": 1,
+			"name": "Dollar",
+			"iso_code": "TWD",
+			"iso_code_num": "901",
+			"sign": "NT$",
+			"blank": "1",
+			"conversion_rate": "1.000000",
+			"deleted": "0",
+			"format": "2",
+			"decimals": "1",
+			"active": "1",
+			"prefix": "",
+			"suffix": " NT$",
+			"id_shop_list": [],
+			"force_id": false
+		};
+		var currencyBlank = 1;
+		var currencyFormat = 2;
+		var currencyRate = 1;
+		var currencySign = 'NT$';
+		var currency_blank = '1';
+		var currency_format = '2';
+		var currency_sign = 'NT$';
+		var customizationIdMessage = '自訂#';
+		var delete_txt = '刪除';
+		var displayList = false;
+		var duration_txt = 'Duration';
+		var email_js_error = 'Please Enter Valid E-mail';
+		var freeProductTranslation = '免費!';
+		var freeShippingTranslation = '免運費！';
+		var generated_date = 1551600061;
+		var hasDeliveryAddress = false;
+		var hotel_loc_cond = 'Please enter a hotel location';
+		var hotel_name_cond = 'Please select a hotel name';
+		var id_lang = 1;
+		var img_dir = 'https://amy.com/hoz/themes/hotel-reservation-theme/img/';
+		var instantsearch = false;
+		var isGuest = 0;
+		var isLogged = 0;
+		var isMobile = false;
+		var less_checkin_date = 'Check In date can not be before current date.';
+		var module_dir = '/hotel/modules/blockcart/';
+		var more_checkout_date = 'Check Out date must be greater than Check In date.';
+		var no_results_found_cond = 'No results found for this search';
+		var num_adults_cond = 'Please enter number of adults.';
+		var num_children_cond = 'Please enter number of children.';
+		var page_name = 'index';
+		var pagename = 'index';
+		var placeholder_blocknewsletter = '輸入您的電郵地址';
+		var priceDisplayMethod = 0;
+		var priceDisplayPrecision = 2;
+		var price_txt = 'Price';
+		var qty_txt = 'Qty';
+		var quickView = true;
+		var remove_rm_title = 'remove this room from my cart';
+		var removingLinkText = '從購物車移除這個產品';
+		var rm_avail_process_lnk = 'https://amy.com/hotel/module/blockcart/checkroomavailabilityajaxprocess';
+		var room_warning_num = '10';
+		var roundMode = 2;
+		var someErrorCondition = 'Some Error occured.Please try again.';
+		var some_error_occur_cond = 'Some error occured. Please try again.';
+		var static_token = '47a32cede234da58335b051b8c1df089';
+		var toBeDetermined = '待定';
+		var token = '8d84ede333590253accda49679863478';
+		var total_qty_txt = 'Total Qty.';
+		var usingSecureMode = false;
+	</script>
+	<script src="/hotel/js/jquery/jquery-1.11.0.min.js" type="text/javascript">
+	</script>
+	<script src="/hotel/js/jquery/jquery-migrate-1.2.1.min.js" type="text/javascript">
+	</script>
+	<script src="/hotel/js/jquery/plugins/jquery.easing.js" type="text/javascript">
+	</script>
+	<script src="/hotel/js/tools.js" type="text/javascript">
+	</script>
+	<script src="/hotel/themes/hotel-reservation-theme/js/global.js" type="text/javascript">
+	</script>
+	<script src="/hotel/js/jquery/ui/jquery.ui.core.min.js" type="text/javascript">
+	</script>
+	<script src="/hotel/js/jquery/ui/jquery.ui.datepicker.min.js" type="text/javascript">
+	</script>
+	<script src="/hotel/js/jquery/plugins/timepicker/jquery-ui-timepicker-addon.js" type="text/javascript">
+	</script>
+	<script src="/hotel/js/jquery/plugins/growl/jquery.growl.js" type="text/javascript">
+	</script>
+	<script src="/hotel/themes/hotel-reservation-theme/js/autoload/10-bootstrap.min.js" type="text/javascript">
+	</script>
+	<script src="/hotel/themes/hotel-reservation-theme/js/autoload/15-jquery.total-storage.min.js" type="text/javascript">
+	</script>
+	<script src="/hotel/themes/hotel-reservation-theme/js/autoload/15-jquery.uniform-modified.js" type="text/javascript">
+	</script>
+	<script src="/hotel/js/jquery/plugins/fancybox/jquery.fancybox.js" type="text/javascript">
+	</script>
+	<script src="/hotel/themes/hotel-reservation-theme/js/products-comparison.js" type="text/javascript">
+	</script>
+	<script src="/hotel/modules/hotelreservationsystem/views/js/HotelReservationFront.js" type="text/javascript">
+	</script>
+	<script src="/hotel/js/validate.js" type="text/javascript">
+	</script>
+	<script src="/hotel/themes/hotel-reservation-theme/js/modules/blocknewsletter/blocknewsletter.js" type="text/javascript">
+	</script>
+	<script src="/hotel/modules/hotelreservationsystem/views/js/roomSearchBlock.js" type="text/javascript">
+	</script>
+	<script src="/hotel/js/jquery/ui/jquery.ui.widget.min.js" type="text/javascript">
+	</script>
+	<script src="/hotel/js/jquery/ui/jquery.ui.mouse.min.js" type="text/javascript">
+	</script>
+	<script src="/hotel/js/jquery/ui/jquery.ui.slider.min.js" type="text/javascript">
+	</script>
+	<script src="/hotel/themes/hotel-reservation-theme/js/modules/blockcart/ajax-cart.js" type="text/javascript">
+	</script>
+	<script src="/hotel/js/jquery/plugins/jquery.scrollTo.js" type="text/javascript">
+	</script>
+	<script src="/hotel/js/jquery/plugins/jquery.serialScroll.js" type="text/javascript">
+	</script>
+	<script src="/hotel/js/jquery/plugins/bxslider/jquery.bxslider.js" type="text/javascript">
+	</script>
+	<script src="/hotel/modules/blocknavigationmenu/views/js/htlnevigationmenu.js" type="text/javascript">
+	</script>
+	<script src="/hotel/themes/hotel-reservation-theme/js/index.js" type="text/javascript">
+	</script>
+	<script src="/hotel/modules/hotelreservationsystem/libs/owl.carousel/owl.carousel.min.js" type="text/javascript">
+	</script>
+	<script src="/hotel/modules/wkabouthotelblock/views/js/WkAboutHotelBlockFront.js" type="text/javascript">
+	</script>
+	<script src="/hotel/modules/wkhotelfeaturesblock/views/js/wkHotelFeaturesBlockFront.js" type="text/javascript">
+	</script>
+	<script src="/hotel/modules/wktestimonialblock/views/js/WkTestimonialBlockFront.js" type="text/javascript">
+	</script><!-- <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,600&amp;subset=latin,latin-ext" type="text/css" media="all" /> -->
+	<!--[if IE 8]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	<!-- by webkul -->
+	<!-- <link href='https://fonts.googleapis.com/css?family=Parisienne' rel='stylesheet' type='text/css'> -->
+	<!-- <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'> -->
+	<link href="fonts/css.css" rel="stylesheet" type="text/css">
+	<style type="text/css">
+		.fancybox-margin {
+			margin-right: 17px;
+		}
+	</style>
+</head>
+
+<body class="index hide-left-column hide-right-column lang_tw" id="index" style="height: 100%;">
+	<div id="page" style="height: 100%;">
+		<div class="header-container" style="height: 100%;">
+			<header id="header" style="background-image:url(&quot;https://amy.com/hotel/img/hotel_header_image.jpg&quot;); height: 100%;">
+				<div class="banner">
+					<div class="container">
+						<div class="row"></div>
+					</div>
+				</div>
+				<div class="nav">
+					<div class="container">
+						<div class="row">
+							<nav></nav>
+						</div>
+					</div>
+				</div>
+				<div>
+					<div class="container">
+						<div class="row">
+							<div class="col-xs-4" id="header_logo">
+								<a href="https://amy.com/hotel/home.html" title="AMY Hotel"><img alt="AMY Hotel" class="logo img-responsive" height="61" src="https://amy.com/hotel/img/logo.png" width="120"></a>
+							</div>
+
+
+
+							<div class="pull-right clearfix nav_menu_padding">
+								<button class="nav_toggle" type="button"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+							</div>
+							<!-- -->
+							<div class="nav_menu_padding header_user_info pull-right hidden-xs">
+								<ul class="navbar-nav userlogin_block hidden-xs">
+									<li class="active">
+										<a class="user_login navigation-link" href="https://amy.com/hotel/home.html" rel="nofollow" title="首頁">
+											<span class="hide_xs">首頁</span>
+
+										</a>
+									</li>
+								</ul>
+							</div>
+							<!-- -->
+							<div class="menu_cont_right" id="menu_cont">
+								<div class="row margin-lr-0">
+									<div class="col-xs-12 col-sm-12">
+										<div class="row margin-lr-0">
+											<span class="pull-right close_navbar"><i class="icon-close"></i></span>
+										</div>
+										<div class="row">
+											<ul class="nav nav-pills nav-stacked wk-nav-style">
+												<li>
+													<a class="navigation-link" href="https://amy.com/hotel/home.html">首頁</a>
+												</li>
+												<li>
+													<a class="navigation-link jsNaviLink" data-block="#hotelAmenitiesBlock" href="#">設施</a>
+												</li>
+												<li>
+													<a class="navigation-link jsNaviLink" data-block="#hotelRoomsBlock" href="#">典藏房型</a>
+												</li>
+												<li>
+													<a class="navigation-link" href="https://amy.com/hotel/index.php?page=legal">法律聲明</a>
+												</li>
+												<li>
+													<a class="navigation-link" href="https://amy.com/hotel/index.php?page=about">關於我們</a>
+												</li>
+												<li>
+													<a class="navigation-link" href="https://amy.com/hotel/index.php?page=contact">聯絡我們</a>
+												</li>
+											</ul>
+											<ul class="nav nav-pills nav-stacked visible-xs wk-nav-style">
+												<li>
+													<a class="navigation-link" href="https://amy.com/hotel/home.html" rel="nofollow" title="Log in to your customer account">首頁</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div><!-- MODULE Block cart -->
+							<div id="layer_cart">
+								<div class="clearfix">
+									<div class="layer_cart_product col-xs-12 col-md-6">
+										<span class="cross" title="關閉視窗 "></span>
+										<h2><i class="icon-check"></i>Room successfully added to your cart</h2>
+										<div class="product-image-container layer_cart_img"></div>
+										<div class="layer_cart_product_info">
+											<span class="product-name" id="layer_cart_product_title"></span> <span id="layer_cart_product_attributes"></span>
+											<div>
+												<strong class="dark">Time Duration &nbsp;-&nbsp;</strong> <span id="layer_cart_product_time_duration"></span>
+											</div>
+											<div>
+												<strong class="dark">Rooms Quantity Added &nbsp;-&nbsp;</strong> <span id="layer_cart_product_quantity"></span>
+											</div>
+											<div>
+												<strong class="dark">Total Cart Cost of This Room Type &nbsp;-&nbsp;</strong> <span id="layer_cart_product_price"></span>
+											</div>
+										</div>
+									</div>
+
+									<div class="layer_cart_overlay"></div>
+									<div class="nav_menu_padding header_user_info pull-right hidden-xs">
+										<ul class="navbar-nav userlogin_block hidden-xs">
+											<li class="active"></li>
+										</ul>
+									</div><!-- /Block user information module NAV -->
+								</div>
+							</div>
+						</div>
+						<div class="header-desc-container">
+							<div class="header-desc-wrapper">
+								<div class="header-desc-primary">
+									<div class="container">
+										<div class="row">
+											<div class="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+												<p class="header-desc-welcome">Welcome To</p>
+												<hr class="heasder-desc-hr-second">
+												<div class="header-desc-inner-wrapper">
+													<h1 class="header-hotel-name"> AMY Hotel</h1>
+													<p class="header-hotel-desc">
+														<h1>專屬和寧靜的環境</h1><br>結合現代豪華與經典風格元素，我們的客房及套房是台中最寬敞的。
+													</p>
+													<hr class="heasder-desc-hr-second">
+												</div>
+											</div>
+										</div>
+										<div class="row margin-top-20 visible-xs">
+											<div class="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+												<!-- <button class="btn button button-medium" id="xs_room_search"><span>Make Booking</span></button> -->
+												<button class="btn button button-medium" id="search_room_submit" name="search_room_submit" onclick="location.href='https://amy.com/hotel/index.php';" type="button"><span>搜尋更多</span></button>
+												<!-- <button class="btn btn-default button button-medium exclusive" id="search_room_submit" name="search_room_submit" onclick="location.href='http://www.wibibi.com';" type="button"><span>Search Now</span></button> -->
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="header-rmsearch-container header-rmsearch-hide-xs hidden-xs">
+							<div class="header-rmsearch-wrapper" id="xs_room_search_form">
+								<div class="header-rmsearch-primary">
+									<div class="fancy_search_header_xs" style="display: none;">
+										<p>Search Rooms</p>
+										<hr>
+									</div>
+									<div class="container">
+										<div class="row header-rmsearch-inner-wrapper">
+											<form id="search_hotel_block_form" method="post" name="search_hotel_block_form">
+												<div class="form-group col-sm-6 col-lg-3">
+													
+													<div class="dropdown">
+														<ul class="location_search_results_ul" style="display: none;"></ul>
+													</div>
+												</div>
+												<div class="form-group col-sm-4 col-lg-2"></div>
+												<div class="form-group col-sm-4 col-lg-2">
+
+													<button class="btn btn-default button button-medium exclusive" id="search_room_submit" name="search_room_submit" onclick="location.href='https://amy.com/hotel/index.php';" type="button"><span>搜尋更多</span></button>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+			</header>
+		</div>
+		<div class="columns-container">
+			<div class="container" id="columns">
+				<div class="row" id="slider_row">
+					<div class="center_column col-xs-12 col-sm-12" id="top_column"></div>
+				</div>
+				<div class="row">
+					<div class="center_column col-xs-12 col-sm-12" id="center_column">
+						<div class="clearfix">
+							<div class="row home_block_container" id="hotelAmenitiesBlock">
+								<div class="col-xs-12 col-sm-12 home_amenities_wrapper" style="height: 566px;">
+									<div class="row home_block_desc_wrapper">
+										<div class="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+											<p class="home_block_heading">設施</p>
+											<p class="home_block_description">我們的精品酒店與在地文化的相互輝映。我們的客房提供舒適的床鋪。我們的服務努力超越您的期望和提升您的體驗。</p>
+											<hr class="home_block_desc_line">
+										</div>
+									</div>
+									<div class="homeAmenitiesBlock home_block_content" style="left: -12px; right: -12px; top: 193px;">
+										<div class="row margin-lr-0">
+											<div class="col-md-6 padding-lr-0 hidden-xs hidden-sm">
+												<div class="row margin-lr-0 amenity_content">
+													<div class="col-md-6 padding-lr-0">
+														<div class="amenity_img_primary">
+															<div class="amenity_img_secondary" style="background-image: url('/hotel/modules/wkhotelfeaturesblock/views/img/hotels_features_img/1.jpg')"></div>
+														</div>
+													</div>
+													<div class="col-md-6 padding-lr-0 amenity_desc_cont" style="height: 186px;">
+														<div class="amenity_desc_primary">
+															<div class="amenity_desc_secondary">
+																<p class="amenity_heading">豪華客房</p>
+																<p class="amenity_description"></p>
+																<hr class="amenity_desc_hr">
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-12 padding-lr-0 visible-sm">
+												<div class="row margin-lr-0 amenity_content">
+													<div class="col-sm-6 padding-lr-0">
+														<div class="amenity_img_primary">
+															<div class="amenity_img_secondary" style="background-image: url('/hotel/modules/wkhotelfeaturesblock/views/img/hotels_features_img/1.jpg')"></div>
+														</div>
+													</div>
+													<div class="col-sm-6 padding-lr-0 amenity_desc_cont" style="height: 0px;">
+														<div class="amenity_desc_primary">
+															<div class="amenity_desc_secondary">
+																<p class="amenity_heading">豪華客房</p>
+																<p class="amenity_description"></p>
+																<hr class="amenity_desc_hr">
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-12 padding-lr-0 visible-xs">
+												<div class="row margin-lr-0 amenity_content">
+													<div class="col-xs-12 padding-lr-0">
+														<div class="amenity_img_primary">
+															<div class="amenity_img_secondary" style="background-image: url('/hotel/modules/wkhotelfeaturesblock/views/img/hotels_features_img/1.jpg')"></div>
+														</div>
+													</div>
+													<div class="col-xs-12 padding-lr-0 amenity_desc_cont" style="height: 0px;">
+														<div class="amenity_desc_primary">
+															<div class="amenity_desc_secondary">
+																<p class="amenity_heading">豪華客房</p>
+																<p class="amenity_description"></p>
+																<hr class="amenity_desc_hr">
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-6 padding-lr-0 hidden-xs hidden-sm">
+												<div class="row margin-lr-0 amenity_content">
+													<div class="col-md-6 padding-lr-0">
+														<div class="amenity_img_primary">
+															<div class="amenity_img_secondary" style="background-image: url('/hotel/modules/wkhotelfeaturesblock/views/img/hotels_features_img/2.jpg')"></div>
+														</div>
+													</div>
+													<div class="col-md-6 padding-lr-0 amenity_desc_cont" style="height: 186px;">
+														<div class="amenity_desc_primary">
+															<div class="amenity_desc_secondary">
+																<p class="amenity_heading">世界級的廚師</p>
+																<p class="amenity_description"></p>
+																<hr class="amenity_desc_hr">
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-12 padding-lr-0 visible-sm">
+												<div class="row margin-lr-0 amenity_content">
+													<div class="col-sm-6 padding-lr-0 amenity_desc_cont" style="height: 0px;">
+														<div class="amenity_desc_primary">
+															<div class="amenity_desc_secondary">
+																<p class="amenity_heading">世界級的廚師</p>
+																<p class="amenity_description"></p>
+																<hr class="amenity_desc_hr">
+															</div>
+														</div>
+													</div>
+													<div class="col-sm-6 padding-lr-0">
+														<div class="amenity_img_primary">
+															<div class="amenity_img_secondary" style="background-image: url('/hotel/modules/wkhotelfeaturesblock/views/img/hotels_features_img/2.jpg')"></div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-12 padding-lr-0 visible-xs">
+												<div class="row margin-lr-0 amenity_content">
+													<div class="col-xs-12 padding-lr-0">
+														<div class="amenity_img_primary">
+															<div class="amenity_img_secondary" style="background-image: url('/hotel/modules/wkhotelfeaturesblock/views/img/hotels_features_img/2.jpg')"></div>
+														</div>
+													</div>
+													<div class="col-xs-12 padding-lr-0 amenity_desc_cont" style="height: 0px;">
+														<div class="amenity_desc_primary">
+															<div class="amenity_desc_secondary">
+																<p class="amenity_heading">世界級的廚師</p>
+																<p class="amenity_description"></p>
+																<hr class="amenity_desc_hr">
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row margin-lr-0">
+											<div class="col-md-6 padding-lr-0 hidden-xs hidden-sm">
+												<div class="row margin-lr-0 amenity_content">
+													<div class="col-md-6 padding-lr-0 amenity_desc_cont" style="height: 186px;">
+														<div class="amenity_desc_primary">
+															<div class="amenity_desc_secondary">
+																<p class="amenity_heading">餐廳</p>
+																<p class="amenity_description">牛排海鮮自助餐廳、酒吧，盡情享用各式美食的新鮮感。到粵菜廳、川菜廳，品嚐精緻的廣東料理和香辣的四川佳餚。邊輕啜飲品，邊欣賞夕陽晚霞，更是您在台中絕不想錯過的極致體驗。</p>
+																<hr class="amenity_desc_hr">
+															</div>
+														</div>
+													</div>
+													<div class="col-md-6 padding-lr-0">
+														<div class="amenity_img_primary">
+															<div class="amenity_img_secondary" style="background-image: url('/hotel/modules/wkhotelfeaturesblock/views/img/hotels_features_img/3.jpg')"></div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-12 padding-lr-0 visible-sm">
+												<div class="row margin-lr-0 amenity_content">
+													<div class="col-sm-6 padding-lr-0">
+														<div class="amenity_img_primary">
+															<div class="amenity_img_secondary" style="background-image: url('/hotel/modules/wkhotelfeaturesblock/views/img/hotels_features_img/3.jpg')"></div>
+														</div>
+													</div>
+													<div class="col-sm-6 padding-lr-0 amenity_desc_cont" style="height: 0px;">
+														<div class="amenity_desc_primary">
+															<div class="amenity_desc_secondary">
+																<p class="amenity_heading">餐廳</p>
+																<p class="amenity_description">牛排海鮮自助餐廳、酒吧，盡情享用各式美食的新鮮感。到粵菜廳、川菜廳，品嚐精緻的廣東料理和香辣的四川佳餚。邊輕啜飲品，邊欣賞夕陽晚霞，更是您在台中絕不想錯過的極致體驗。</p>
+																<hr class="amenity_desc_hr">
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-12 padding-lr-0 visible-xs">
+												<div class="row margin-lr-0 amenity_content">
+													<div class="col-xs-12 padding-lr-0">
+														<div class="amenity_img_primary">
+															<div class="amenity_img_secondary" style="background-image: url('/hotel/modules/wkhotelfeaturesblock/views/img/hotels_features_img/3.jpg')"></div>
+														</div>
+													</div>
+													<div class="col-xs-12 padding-lr-0 amenity_desc_cont" style="height: 0px;">
+														<div class="amenity_desc_primary">
+															<div class="amenity_desc_secondary">
+																<p class="amenity_heading">餐廳</p>
+																<p class="amenity_description">牛排海鮮自助餐廳、酒吧，盡情享用各式美食的新鮮感。到粵菜廳、川菜廳，品嚐精緻的廣東料理和香辣的四川佳餚。邊輕啜飲品，邊欣賞夕陽晚霞，更是您在台中絕不想錯過的極致體驗。</p>
+																<hr class="amenity_desc_hr">
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-6 padding-lr-0 hidden-xs hidden-sm">
+												<div class="row margin-lr-0 amenity_content">
+													<div class="col-md-6 padding-lr-0 amenity_desc_cont" style="height: 186px;">
+														<div class="amenity_desc_primary">
+															<div class="amenity_desc_secondary">
+																<p class="amenity_heading">Gym &amp; Spa</p>
+																<p class="amenity_description">營業時間：07:30~22:00 <br> 健身空間寬廣舒適，內置專業的健身器材，在此運動健身，讓您的身體、心靈都能感到舒暢。 健身房內設有專屬衛生間，運動中不怕任何生理上的不便，運動任我們可以解放生心疲憊及煩惱。</p>
+																<hr class="amenity_desc_hr">
+															</div>
+														</div>
+													</div>
+													<div class="col-md-6 padding-lr-0">
+														<div class="amenity_img_primary">
+															<div class="amenity_img_secondary" style="background-image: url('/hotel/modules/wkhotelfeaturesblock/views/img/hotels_features_img/4.jpg')"></div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-12 padding-lr-0 visible-sm">
+												<div class="row margin-lr-0 amenity_content">
+													<div class="col-sm-6 padding-lr-0 amenity_desc_cont" style="height: 0px;">
+														<div class="amenity_desc_primary">
+															<div class="amenity_desc_secondary">
+																<p class="amenity_heading">Gym &amp; Spa</p>
+																<p class="amenity_description">營業時間：07:30~22:00 <br> 健身空間寬廣舒適，內置專業的健身器材，在此運動健身，讓您的身體、心靈都能感到舒暢。 健身房內設有專屬衛生間，運動中不怕任何生理上的不便，運動任我們可以解放生心疲憊及煩惱。</p>
+																<hr class="amenity_desc_hr">
+															</div>
+														</div>
+													</div>
+													<div class="col-sm-6 padding-lr-0">
+														<div class="amenity_img_primary">
+															<div class="amenity_img_secondary" style="background-image: url('/hotel/modules/wkhotelfeaturesblock/views/img/hotels_features_img/4.jpg')"></div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-12 padding-lr-0 visible-xs">
+												<div class="row margin-lr-0 amenity_content">
+													<div class="col-xs-12 padding-lr-0">
+														<div class="amenity_img_primary">
+															<div class="amenity_img_secondary" style="background-image: url('/hotel/modules/wkhotelfeaturesblock/views/img/hotels_features_img/4.jpg')"></div>
+														</div>
+													</div>
+													<div class="col-xs-12 padding-lr-0 amenity_desc_cont" style="height: 0px;">
+														<div class="amenity_desc_primary">
+															<div class="amenity_desc_secondary">
+																<p class="amenity_heading">Gym &amp; Spa</p>
+																<p class="amenity_description">營業時間：07:30~22:00 <br> 健身空間寬廣舒適，內置專業的健身器材，在此運動健身，讓您的身體、心靈都能感到舒暢。健身房內設有專屬衛生間，運動中不怕任何生理上的不便，運動任我們可以解放生心疲憊及煩惱。</p>
+																<hr class="amenity_desc_hr">
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<hr class="home_block_seperator" style="left: -12px; right: -12px;">
+							</div>
+							<div class="row home_block_container" id="hotelRoomsBlock">
+								<div class="col-xs-12 col-sm-12">
+									<div class="row home_block_desc_wrapper">
+										<div class="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+											<p class="home_block_heading">城市中心 超舒適的設施 低調的魅力</p>
+											<p class="home_block_description"> AMY HOTEL 台中館 - 精心規劃打造的精美工藝，位於台灣中心樞紐，年輕城市探險家的世外桃源</p>
+											<hr class="home_block_desc_line">
+										</div>
+									</div>
+									<div class="row home_block_content">
+										<div class="col-sm-12 col-xs-12">
+											<div class="row">
+												<div class="col-sm-12 col-md-6 margin-btm-30">
+													<img alt="Delux Rooms" class="img-responsive width-100" src="https://amy.com/hotel/img/r1.jpg">
+													<div class="hotelRoomDescContainer">
+														<div class="row margin-lr-0">
+															<p class="htlRoomTypeNameText pull-left">商務雙人房｜寬裕、質感的住宿空間</p>
+															<p class="htlRoomTypePriceText pull-right"><span class="wk_roomType_price">1 575,00 NT$</span> /&nbsp;每晚</p>
+														</div>
+														<div class="row margin-lr-0 htlRoomTypeDescText">
+															望向大片落地窗外的都會景色及綿綿山巒，忘卻外界的紛擾，盡情享受空間的寬敞、重拾內心的豁達。
+														</div>
+														<div class="row margin-lr-0">
+															<a class="btn btn-default button htlRoomTypeBookNow" href="https://amy.com/hotel/rooms1.html" target="blank"><span>詳細資訊</span></a>
+														</div>
+													</div>
+												</div>
+												<div class="col-sm-12 col-md-6 margin-btm-30">
+													<img alt="Executive Rooms" class="img-responsive width-100" src="https://amy.com/hotel/img/r2.jpg">
+													<div class="hotelRoomDescContainer">
+														<div class="row margin-lr-0">
+															<p class="htlRoomTypeNameText pull-left">輕奢雙人房｜放鬆、品味的環境氛圍</p>
+															<p class="htlRoomTypePriceText pull-right"><span class="wk_roomType_price">2 100,00 NT$</span> /&nbsp;每晚</p>
+														</div>
+														<div class="row margin-lr-0 htlRoomTypeDescText">
+															溫潤的木質色調，印襯出床舖的潔淨舒適，於入夜時分，抑或一覺好眠過後，浸泡在獨有的降板式浴缸都是達到極致放鬆的完美好選擇。
+														</div>
+														<div class="row margin-lr-0">
+															<a class="btn btn-default button htlRoomTypeBookNow" href="https://amy.com/hotel/rooms2.html" target="blank"><span>詳細資訊</span></a>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-sm-12 col-md-6 margin-btm-30">
+													<img alt="General Rooms" class="img-responsive width-100" src="https://amy.com/hotel/img/r3.jpg">
+													<div class="hotelRoomDescContainer">
+														<div class="row margin-lr-0">
+															<p class="htlRoomTypeNameText pull-left">親子四人房｜忘憂、舒心小小天地</p>
+															<p class="htlRoomTypePriceText pull-right"><span class="wk_roomType_price">1 050,00 NT$</span> /&nbsp;每晚</p>
+														</div>
+														<div class="row margin-lr-0 htlRoomTypeDescText">
+															專屬家庭設計的旅居房型，內建兒童最愛的小帳棚遊具，寬敞空間適合一家四口的忘憂、舒心小小天地。
+														</div>
+														<div class="row margin-lr-0">
+															<a class="btn btn-default button htlRoomTypeBookNow" href="https://amy.com/hotel/rooms3.html" target="blank"><span>詳細資訊</span></a>
+														</div>
+													</div>
+												</div>
+												<div class="col-sm-12 col-md-6 margin-btm-30">
+													<img alt="luxury Rooms" class="img-responsive width-100" src="https://amy.com/hotel/img/r4.jpg">
+													<div class="hotelRoomDescContainer">
+														<div class="row margin-lr-0">
+															<p class="htlRoomTypeNameText pull-left">總統套房｜如家自在，舒適愜意</p>
+															<p class="htlRoomTypePriceText pull-right"><span class="wk_roomType_price">2 625,00 NT$</span> /&nbsp;每晚</p>
+														</div>
+														<div class="row margin-lr-0 htlRoomTypeDescText">
+															清新木質色調的空間，溫柔搭配暖色燈光設計，呈現慵懶自在的放鬆氛圍，讓您能體驗皇家等級的睡眠品質，並附設獨有Lounge吧檯，及躺臥式沙發，讓您在舒適愜意中享受尊榮待遇。
+														</div>
+														<div class="row margin-lr-0">
+															<a class="btn btn-default button htlRoomTypeBookNow" href="https://amy.com/hotel/rooms4.html" target="blank"><span>詳細資訊</span></a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<hr class="home_block_seperator" style="left: -12px; right: -12px;">
+							</div>
+						</div>
+					</div><!-- #center_column -->
+				</div><!-- .row -->
+			</div><!-- #columns -->
+		</div><!-- .columns-container -->
+		<!-- Footer -->
+		<div class="footer-container">
+			<footer class="container" id="footer">
+				<div class="row margin-btm-50">
+					<div class="col-sm-3">
+						<!-- Block languages module -->
+						<div class="row"></div><!-- /Block languages module -->
+					</div>
+					<div class="col-sm-3">
+						<div class="row">
+							<section class="col-xs-12 col-sm-12">
+								<div class="row margin-lr-0 footer-section-heading">
+									<p>探索AMY HOTEL</p>
+									<hr>
+								</div>
+								<div class="row margin-lr-0">
+									<ul class="footer-explore-section">
+										<li class="item">
+											<a href="https://amy.com/hotel/index.php?page=legal" title="法律聲明">法律聲明</a>
+										</li>
+										<li class="item">
+											<a href="https://amy.com/hotel/index.php?page=terms" title="網站使用條款">網站使用條款</a>
+										</li>
+										<li class="item">
+											<a href="https://amy.com/hotel/index.php?page=about" title="關於我們">關於我們</a>
+										</li>
+										<li class="item">
+											<a href="https://amy.com/wordpress/2019/07/10/%e4%bb%98%e6%ac%be%e5%ae%89%e5%85%a8%e8%aa%aa%e6%98%8e/" title="付款安全說明">付款安全說明</a>
+										</li>
+										<li class="item">
+											<a href="https://amy.com/wordpress/2019/07/10/%E4%BB%98%E6%AC%BE%E4%BA%A4%E6%98%93%E8%AA%AA%E6%98%8E/" title="付款交易說明">付款交易說明</a>
+										</li>
+									</ul>
+								</div>
+							</section>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="row">
+							<section class="col-xs-12 col-sm-12">
+								<div class="row margin-lr-0 footer-section-heading">
+									<p>關於AMY HOTEL</p>
+									<hr>
+								</div>
+								<div class="row margin-lr-0 footer-about-hotel">
+									<p>I Will Never Let You Go</p>
+								</div>
+							</section>
+						</div>
+						<div class="row">
+							<section class="col-xs-12 col-sm-12">
+								<div class="row margin-lr-0 footer-section-heading">
+									<p>付款資訊</p>
+									<hr>
+								</div>
+								<div class="row margin-lr-0 footer-payment-block">
+								<img src="/hotel/modules/wkfooterpaymentblock/views/img/payment_img/2.jpg"> 
+								<img src="/hotel/modules/wkfooterpaymentblock/views/img/payment_img/4.jpg"> 
+								</div>
+							</section>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<!-- Block Newsletter module-->
+						<div class="row"></div><!-- /Block Newsletter module-->
+						<div class="row">
+							<section class="col-xs-12 col-sm-12">
+								<div class="row margin-lr-0 footer-section-heading">
+									<p>關注我們</p>
+									<hr>
+								</div>
+								<div class="row margin-lr-0" id="social_block">
+									<ul>
+										<li class="facebook">
+											<a class="_blank" href="https://www.facebook.com/" target="_blank"><span>Facebook</span></a>
+										</li>
+										<li class="twitter">
+											<a class="_blank" href="https://twitter.com/" target="_blank"><span>Twitter</span></a>
+										</li>
+									</ul>
+									<div class="clearfix"></div>
+								</div>
+							</section>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<div class="copyRightWrapper">
+				<p class="copyRight">© 2019-2019&nbsp;<a href="https://amy.com/hotel/">&nbsp;Hotel AMY</a>.&nbsp; All rights reserved.</p>
+			</div>
+		</div><!-- #footer -->
+	</div><!-- #page -->
+	<div class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" id="ui-datepicker-div"></div>
+</body>
+
+</html>

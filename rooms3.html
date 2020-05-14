@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html class="" lang="zh-tw" style="">
+<head>
+	<meta charset="utf-8">
+	<title>AMY Hotel</title>
+	<meta content="index,follow" name="robots">
+	<meta content="width=device-width, minimum-scale=0.25, maximum-scale=1.6, initial-scale=1.0" name="viewport">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<link href="/hotel/img/favicon.ico?1551515016" rel="icon" type="image/vnd.microsoft.icon">
+	<link href="/hotel/img/favicon.ico?1551515016" rel="shortcut icon" type="image/x-icon">
+	<link href="/hotel/themes/hotel-reservation-theme/css/global.css" media="all" rel="stylesheet" type="text/css">
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="css/main.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="/hotel/360/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="/hotel/360/css/default.css">
+	<link rel="stylesheet" type="text/css" href="/hotel/360/css/index.css">
+	<link href="/hotel/js/jquery/ui/themes/base/jquery.ui.core.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/js/jquery/ui/themes/base/jquery.ui.datepicker.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/js/jquery/ui/themes/base/jquery.ui.theme.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/themes/hotel-reservation-theme/css/autoload/highdpi.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/themes/hotel-reservation-theme/css/autoload/responsive-tables.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/themes/hotel-reservation-theme/css/autoload/uniform.default.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/js/jquery/plugins/fancybox/jquery.fancybox.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/themes/hotel-reservation-theme/css/product.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/themes/hotel-reservation-theme/css/print.css" media="print" rel="stylesheet" type="text/css">
+	<link href="/hotel/js/jquery/plugins/bxslider/jquery.bxslider.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/modules/hotelreservationsystem/views/css/datepickerCustom.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/modules/hotelreservationsystem/views/css/searchblock.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/modules/hotelreservationsystem/views/css/HotelReservationFront.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/themes/hotel-reservation-theme/css/modules/blocknewsletter/blocknewsletter.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/js/jquery/ui/themes/base/jquery.ui.slider.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/modules/socialsharing/css/socialsharing.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/themes/hotel-reservation-theme/css/modules/blockcart/blockcart.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/themes/hotel-reservation-theme/css/modules/blockuserinfo/blockuserinfo.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/themes/hotel-reservation-theme/css/modules/blocklanguages/blocklanguages.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/themes/hotel-reservation-theme/css/modules/blockcurrencies/blockcurrencies.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/themes/hotel-reservation-theme/css/modules/productcomments/productcomments.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/modules/blocknavigationmenu/views/css/blocknavigation.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/modules/wkfooterexploreblock/views/css/wkFooterExploreBlockFront.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/modules/wkfooteraboutblock/views/css/wkFooterAboutBlockFront.css" media="all" rel="stylesheet" type="text/css">
+	<link href="/hotel/modules/wkfooterpaymentblock/views/css/wkFooterPaymentBlockFront.css" media="all" rel="stylesheet" type="text/css">
+
+	<script type="text/javascript">
+	   var CUSTOMIZE_TEXTFIELD = 1;
+	   var FancyboxI18nClose = 'Close';
+	   var FancyboxI18nNext = 'Next';
+	   var FancyboxI18nPrev = 'Previous';
+	   var PS_CATALOG_MODE = false;
+	   var adults_txt = 'Adults';
+	   var ajax_allowed = true;
+	   var ajaxsearch = true;
+	   var allowBuyWhenOutOfStock = true;
+	   var attribute_anchor_separator = '-';
+	   var attributesCombinations = [];
+	   var autocomplete_search_url = 'https://amy.com/hotel/tw/module/wkroomsearchblock/autocompletesearch';
+	   var availableLaterValue = '';
+	   var availableNowValue = '';
+	   var baseDir = 'https://amy.com/hotel/';
+	   var baseUri = 'https://amy.com/hotel/';
+	   var booking_date_from = '2019-03-09';
+	   var booking_date_to = '2019-03-10';
+	   var capacity_txt = 'Capacity';
+	   var check_in_time_cond = 'Please enter Check In time';
+	   var check_out_time_cond = 'Please enter Check Out time';
+	   var children_txt = 'Children';
+	   var confirm_report_message = 'Are you sure that you want to report this comment?';
+	   var contentOnly = false;
+	   var correct_date_cond = 'Check Out Date should be greater than Check in date.';
+	   var currency = {"id":1,"name":"Dollar","iso_code":"TWD","iso_code_num":"901","sign":"NT$","blank":"1","conversion_rate":"1.000000","deleted":"0","format":"2","decimals":"1","active":"1","prefix":"","suffix":" NT$","id_shop_list":[],"force_id":false};
+	   var currencyBlank = 1;
+	   var currencyFormat = 2;
+	   var currencyRate = 1;
+	   var currencySign = 'NT$';
+	   var currency_blank = '1';
+	   var currency_format = '2';
+	   var currency_sign = 'NT$';
+	   var currentDate = '2019-03-09 12:42:42';
+	   var customerGroupWithoutTax = false;
+	   var customizationFields = false;
+	   var customizationId = null;
+	   var customizationIdMessage = '自訂#';
+	   var default_eco_tax = 0;
+	   var delete_txt = '刪除';
+	   var displayList = false;
+	   var displayPrice = 0;
+	   var doesntExist = 'This combination does not exist for this product. Please select another combination.';
+	   var doesntExistNoMore = 'This product is no longer in stock';
+	   var doesntExistNoMoreBut = 'with those attributes but is available with others.';
+	   var duration_txt = 'Duration';
+	   var ecotaxTax_rate = 0;
+	   var email_js_error = 'Please Enter Valid E-mail';
+	   var fieldRequired = 'Please fill in all the required fields before saving your customization.';
+	   var freeProductTranslation = '免費!';
+	   var freeShippingTranslation = '免運費！';
+	   var generated_date = 1552106562;
+	   var groupReduction = 0;
+	   var hasDeliveryAddress = false;
+	   var hotel_loc_cond = 'Please enter a hotel location';
+	   var hotel_name_cond = 'Please select a hotel name';
+	   var idDefaultImage = 24;
+	   var id_lang = 1;
+	   var id_product = 8;
+	   var img_dir = 'https://amy.com/hotel/themes/hotel-reservation-theme/img/';
+	   var img_prod_dir = 'https://amy.com/hotel/img/p/';
+	   var img_ps_dir = 'https://amy.com/hotel/img/';
+	   var instantsearch = false;
+	   var isGuest = 0;
+	   var isLogged = 0;
+	   var isMobile = false;
+	   var jqZoomEnabled = false;
+	   var less_checkin_date = 'Check In date can not be before current date.';
+	   var maxQuantityToAllowDisplayOfLastQuantityMessage = 3;
+	   var max_order_date = '2020-03-02';
+	   var minimalQuantity = 1;
+	   var moderation_active = true;
+	   var module_dir = '/hotel/modules/blockcart/';
+	   var more_checkout_date = 'Check Out date must be greater than Check In date.';
+	   var noTaxForThisProduct = false;
+	   var num_adults_cond = 'Please enter number of adults.';
+	   var num_children_cond = 'Please enter number of children.';
+	   var oosHookJsCodeFunctions = [];
+	   var out_of_stock_cond = 'No room is available for this period.';
+	   var page_name = 'product';
+	   var pagename = 'product';
+	   var placeholder_blocknewsletter = '輸入您的電郵地址';
+	   var priceDisplayMethod = 0;
+	   var priceDisplayPrecision = 2;
+	   var price_txt = 'Price';
+	   var productAvailableForOrder = true;
+	   var productBasePriceTaxExcl = 1000;
+	   var productBasePriceTaxExcluded = 1000;
+	   var productBasePriceTaxIncl = 1050;
+	   var productHasAttributes = false;
+	   var productPrice = 1050;
+	   var productPriceTaxExcluded = 1000;
+	   var productPriceTaxIncluded = 1050;
+	   var productPriceWithoutReduction = 1050;
+	   var productReference = '';
+	   var productShowPrice = true;
+	   var productUnitPriceRatio = 0;
+	   var product_controller_url = 'https://amy.com/hotel/tw/index.php?controller=product';
+	   var product_fileButtonHtml = 'Choose File';
+	   var product_fileDefaultHtml = 'No file selected';
+	   var product_specific_price = [];
+	   var productcomment_added = '您的評論已經被加入!';
+	   var productcomment_added_moderation = '您的評論已經加入，通過審批後將被顯示。';
+	   var productcomment_ok = '確定';
+	   var productcomment_title = '新評論';
+	   var productcomments_controller_url = 'https://amy.com/hotel/tw/module/productcomments/default';
+	   var productcomments_url_rewrite = true;
+	   var qty_txt = 'Qty';
+	   var quantitiesDisplayAllowed = true;
+	   var quantityAvailable = 999999999;
+	   var quickView = true;
+	   var reduction_percent = 0;
+	   var reduction_price = 0;
+	   var remove_rm_title = 'remove this room from my cart';
+	   var removingLinkText = '從購物車移除這個產品';
+	   var room_warning_num = '10';
+	   var roundMode = 2;
+	   var secure_key = '75901f4222e666726491f8f72c6edb30';
+	   var sharing_name = '豪華雙人房';
+	   var sharing_url = 'https://amy.com/hotel/rooms1.html';
+	   var someErrorCondition = 'Some Error occured.Please try again.';
+	   var some_error_cond = 'Some error occured .Please try again.';
+	   var some_error_occur_cond = 'Some error occured. Please try again.';
+	   var specific_currency = false;
+	   var specific_price = 0;
+	   var static_token = '47a32cede234da58335b051b8c1df089';
+	   var stock_management = 1;
+	   var taxRate = 5;
+	   var toBeDetermined = '待定';
+	   var token = '47a32cede234da58335b051b8c1df089';
+	   var total_avail_rms = 5;
+	   var total_qty_txt = 'Total Qty.';
+	   var unavail_qty_text = 'Required quantity of rooms are Not available.';
+	   var uploading_in_progress = 'Uploading in progress, please be patient.';
+	   var usingSecureMode = false;
+	   var wrong_qty_cond = 'you are trying for a invalid quantity.';
+	</script>
+
+	<script src="/hotel/360/js/three.min.js"></script>
+	<script src="/hotel/360/js/photo-sphere-viewer.min.js"></script>
+	<script>
+	        window.onload = function() {
+	           var div = document.getElementById('my-pano');
+	           var PSV = new PhotoSphereViewer({
+	            // Panorama, given in base 64
+	            panorama: '360img/03.jpg',
+
+	            // Container
+	            container: div,
+
+	            autoload:true,
+
+	            // Deactivate the animation
+	            time_anim: 2000,
+
+	            // Display the navigation bar
+	            navbar: true,
+
+	            // Resize the panorama
+	            size: {
+	                width: '90%',
+	                height: 300
+	            }
+	        });
+	  };
+	        </script>
+	<script src="/hotel/js/jquery/jquery-1.11.0.min.js" type="text/javascript">
+	</script>
+	<script src="/hotel/js/jquery/jquery-migrate-1.2.1.min.js" type="text/javascript">
+	</script>
+	<script src="/hotel/js/jquery/plugins/jquery.easing.js" type="text/javascript">
+	</script>
+	<script src="/hotel/js/tools.js" type="text/javascript">
+	</script>
+	<script src="/hotel/themes/hotel-reservation-theme/js/global.js" type="text/javascript">
+	</script>
+	<script src="/hotel/js/jquery/ui/jquery.ui.core.min.js" type="text/javascript">
+	</script>
+	<script src="/hotel/js/jquery/ui/jquery.ui.datepicker.min.js" type="text/javascript">
+	</script>
+	<script src="/hotel/js/jquery/plugins/timepicker/jquery-ui-timepicker-addon.js" type="text/javascript">
+	</script>
+	<script src="/hotel/js/jquery/plugins/growl/jquery.growl.js" type="text/javascript">
+	</script>
+	<script src="/hotel/themes/hotel-reservation-theme/js/autoload/10-bootstrap.min.js" type="text/javascript">
+	</script>
+	<script src="/hotel/themes/hotel-reservation-theme/js/autoload/15-jquery.total-storage.min.js" type="text/javascript">
+	</script>
+	<script src="/hotel/themes/hotel-reservation-theme/js/autoload/15-jquery.uniform-modified.js" type="text/javascript">
+	</script>
+	<script src="/hotel/js/jquery/plugins/fancybox/jquery.fancybox.js" type="text/javascript">
+	</script>
+	<script src="/hotel/themes/hotel-reservation-theme/js/products-comparison.js" type="text/javascript">
+	</script>
+	<script src="/hotel/js/jquery/plugins/jquery.idTabs.js" type="text/javascript">
+	</script>
+	<script src="/hotel/js/jquery/plugins/jquery.scrollTo.js" type="text/javascript">
+	</script>
+	<script src="/hotel/js/jquery/plugins/jquery.serialScroll.js" type="text/javascript">
+	</script>
+	<script src="/hotel/js/jquery/plugins/bxslider/jquery.bxslider.js" type="text/javascript">
+	</script>
+	<script src="/hotel/modules/hotelreservationsystem/views/js/roomSearchBlock.js" type="text/javascript">
+	</script>
+	<script src="/hotel/themes/hotel-reservation-theme/js/product.js" type="text/javascript">
+	</script>
+	<script src="/hotel/modules/hotelreservationsystem/views/js/HotelReservationFront.js" type="text/javascript">
+	</script>
+	<script src="/hotel/js/validate.js" type="text/javascript">
+	</script>
+	<script src="/hotel/themes/hotel-reservation-theme/js/modules/blocknewsletter/blocknewsletter.js" type="text/javascript">
+	</script>
+	<script src="/hotel/js/jquery/ui/jquery.ui.widget.min.js" type="text/javascript">
+	</script>
+	<script src="/hotel/js/jquery/ui/jquery.ui.mouse.min.js" type="text/javascript">
+	</script>
+	<script src="/hotel/js/jquery/ui/jquery.ui.slider.min.js" type="text/javascript">
+	</script>
+	<script src="/hotel/modules/socialsharing/js/socialsharing.js" type="text/javascript">
+	</script>
+	<script src="/hotel/themes/hotel-reservation-theme/js/modules/blockcart/ajax-cart.js" type="text/javascript">
+	</script>
+	<script src="/hotel/modules/productcomments/js/jquery.rating.pack.js" type="text/javascript">
+	</script>
+	<script src="/hotel/modules/blocknavigationmenu/views/js/htlnevigationmenu.js" type="text/javascript">
+	</script>
+	<script src="/hotel/modules/productcomments/js/jquery.textareaCounter.plugin.js" type="text/javascript">
+	</script>
+	<script src="/hotel/themes/hotel-reservation-theme/js/modules/productcomments/js/productcomments.js" type="text/javascript">
+	</script>
+	<meta content="product" property="og:type">
+	<meta content="https://amy.com/hotel/rooms1.html" property="og:url">
+	<meta content="General Rooms - AMY Hotel" property="og:title">
+	<meta content="AMY Hotel" property="og:site_name">
+	<meta content="Fashion axe kogi yuccie, ramps shabby chic direct trade before they sold out distillery bicycle rights. Slow-carb +1 quinoa VHS. +1 brunch trust fund, meggings chartreuse sustainable everyday carry tumblr hoodie tacos tilde ramps post-ironic fixie." property="og:description">
+	<meta content="https://amy.com/hotel/img/r1/1.jpg" property="og:image">
+	<meta content="1000" property="product:pretax_price:amount">
+	<meta content="TWD" property="product:pretax_price:currency">
+	<meta content="1050" property="product:price:amount">
+	<meta content="TWD" property="product:price:currency"><!-- <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,600&amp;subset=latin,latin-ext" type="text/css" media="all" /> -->
+	<!--[if IE 8]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	<!-- by webkul -->
+	<!-- <link href='https://fonts.googleapis.com/css?family=Parisienne' rel='stylesheet' type='text/css'> -->
+	<!-- <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'> -->
+	<link href="https://fonts.googleapis.com/css?family=Oxygen:400,300,700" rel="stylesheet" type="text/css">
+	<style type="text/css">
+	   .fancybox-margin{margin-right:17px;}
+	</style>
+</head>
+<body>
+	<!-- <body class="product product-8 product-super-delux-rooms category-2 category-home hide-left-column hide-right-column lang_tw" id="product" style=""> -->
+	<!-- -->
+
+	<div class="navbar-default top-navbar navbar-static-top">
+		<div class="container">
+			<div class="row">
+				<div class="navbar-header">
+					<button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand" href="home.html">AMY Hotel</a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<div class="navbar-right">
+						<a class="top-right-link" href="home.html">首頁</a> <a class="top-right-link" href="index.php?page=contact">聯絡我們</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!-- -->
+	<div id="page" style="">
+		<div class="columns-container">
+			<div class="container" id="columns">
+				<div class="row" id="slider_row">
+					<div class="center_column col-xs-12 col-sm-12" id="top_column"></div>
+				</div>
+				<div class="row">
+					<div class="center_column col-xs-12 col-sm-12" id="center_column">
+						<div itemscope itemtype="http://schema.org/Product">
+							<meta content="https://amy.com/hotel/rooms1.html" itemprop="url">
+
+								<!--            <div class="container">
+                <div class="top-hr"></div>
+            </div>
+         --><!-- by webkul -->
+								<!-- left infos-->
+								<div class="pb-left-column col-xs-12 col-sm-8 col-md-8" style="border:1px solid #cccccc">
+									<div class="room_hotel_name_block">
+										<div class="hotel_name_block">
+
+											<span>&nbsp;-&nbsp;親子四人房&nbsp;-&nbsp;</span>
+										</div>
+										
+										
+									</div>
+									
+									<!-- product img-->
+									<div class="primary_block row">
+											<div id="my-pano" class="pano"></div>
+									</div>	
+									<!-- end image-block -->
+									
+									
+									
+									<!-- thumbnails -->
+									<div class="clearfix" id="views_block">
+										<span class="view_scroll_spacer"><a class="" href="javascript:{}" id="view_scroll_left" style="cursor: default; opacity: 0;" title="Other views">Previous</a></span>
+										<div id="thumbs_list">
+											<ul id="thumbs_list_frame" style="width: 392px;">
+												<li id="thumbnail_24">
+													<a class="fancybox shown" data-fancybox-group="other-views" href="https://amy.com/hotel/img/r3/1.jpg" title="豪華雙人房"><img alt="豪華雙人房" class="img-responsive" height="80" id="thumb_24" itemprop="image" src="https://amy.com/hotel/img/r3/1.jpg" title="豪華雙人房" width="80"></a>
+												</li>
+												<li id="thumbnail_25">
+													<a class="fancybox" data-fancybox-group="other-views" href="https://amy.com/hotel/img/r3/2.jpg" title="豪華雙人房"><img alt="豪華雙人房" class="img-responsive" height="80" id="thumb_25" itemprop="image" src="https://amy.com/hotel/img/r3/2.jpg" title="豪華雙人房" width="80"></a>
+												</li>
+												<li id="thumbnail_26">
+													<a class="fancybox" data-fancybox-group="other-views" href="https://amy.com/hotel/img/r3/3.jpg" title="豪華雙人房"><img alt="豪華雙人房" class="img-responsive" height="80" id="thumb_26" itemprop="image" src="https://amy.com/hotel/img/r3/3.jpg" title="豪華雙人房" width="80"></a>
+												</li>
+												<li class="last" id="thumbnail_27">
+													<a class="fancybox" data-fancybox-group="other-views" href="https://amy.com/hotel/img/r3/4.jpg" title="豪華雙人房"><img alt="豪華雙人房" class="img-responsive" height="80" id="thumb_27" itemprop="image" src="https://amy.com/hotel/img/r3/4.jpg" title="豪華雙人房" width="80"></a>
+												</li>
+											</ul>
+										</div><!-- end thumbs_list -->
+										<a href="javascript:{}" id="view_scroll_right" style="cursor: pointer; opacity: 1; display: block;" title="Other views">Next</a>
+									</div><!-- end views-block -->
+									<!-- end thumbnails -->
+									<p class="resetimg clear no-print"><span id="wrapResetImages" style="display: none;"><a data-id="resetImages" href="https://amy.com/hotel/rooms1.html"><i class="icon-repeat"></i> Display all pictures</a></span></p><!-- tab hook is added here -->
+									<!--HOOK_PRODUCT_TAB -->
+									<section class="page-product-box col-sm-12">
+										<ul class="nav nav-tabs product_description_tabs">
+											<li class="active">
+												<a class="idTabHrefShort" data-toggle="tab" href="#room_info_tab">房型資訊</a>
+											</li><!-- <h3 id="#idTab5" class="idTabHrefShort page-product-heading">評論</h3>
+<h3 id="#idTab6" class="idTabHrefShort page-product-heading">評論</h3>  -->
+											<li>
+												<a class="idTabHrefShort" data-toggle="tab" href="#idTab5">評論</a>
+											</li>
+										</ul>
+										<div class="tab-content panel product_description_tabs_contents">
+											<div class="tab-pane active" id="room_info_tab">
+												<div id="room_info_tab_information">
+													<div class="info_margin_div room_description"><br>
+													<strong>房型包含 -</strong> &nbsp;<img src="/hotel/img/rf/8.png" width="15px"> &nbsp;<img src="/hotel/img/rf/9.png" width="15px"> &nbsp;<img src="/hotel/img/rf/10.png" width="15px"> &nbsp;<img src="/hotel/img/rf/11.png" width="15px"></div>
+													<div class="info_margin_div">
+														<div class="room_info_heading">
+															<span>房型特色</span>
+														</div>
+														<div class="room_info_content row">
+															<span class="col-sm-4">房間特色</span> <span class="col-sm-4">客房設備</span> <span class="col-sm-4">浴室備品</span> <span class="col-sm-4">獨立浴缸</span><span class="col-sm-4">可調控空調系統</span> <span class="col-sm-4">沐浴用品</span><span class="col-sm-4">乾溼分離</span>
+															 <span class="col-sm-4">液晶系統電視</span> <span class="col-sm-4">身體用乳液</span><span class="col-sm-4">免費上網</span><span class="col-sm-4">免治馬桶</span> <span class="col-sm-4">室內用拖鞋</span> <span class="col-sm-4">免費使用Handy Phone</span>
+													</div>
+													</div><!-- <div class="info_margin_div">
+                                <div class="room_info_heading">
+                                    <span>Rooms</span>
+                                </div>
+                                <div class="room_info_content row"></div>
+                            </div> -->
+													<div class="info_margin_div">
+														<div class="room_info_heading">
+															<span>注意事項</span>
+														</div>
+														<div class="room_info_content" style="text-align:left;">
+															<p class="">1.入住時間15：00，退房時間12：00<br>2.預訂豪華客房可預訂加床，每晚加收NT$1500加15.5%服務費及稅金。(數量有限，請先預約)<br>3.行政樓層貴賓並可蒞臨17樓的翰林軒VIP Lounge，免費享用歐陸式早餐及飲料輕食服務。 (僅提供12歲以上成年貴賓使用)<br>4.嬰兒床及嬰兒備品免費。(數量有限，請先預約)<br>5.飯店設有無障礙客房可供有需要的旅客事先預訂<br>6.每房免費提供車位一個<br>7.依菸害防治法，全館禁止吸菸<br> </p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="tab-pane" id="idTab5">
+												<div id="product_comments_block_tab">
+													<p class="align_center no_reviews_cond_block">No customer reviews for the moment.</p>
+												</div><!-- #product_comments_block_tab -->
+											</div>
+											<style type="text/css">
+
+											                                 .no_reviews_cond_block
+											                                 {
+											                                 color: #404040;
+											                                 font-size:15px;
+											                                 font-weight:400;
+											                                 }
+											                                 .name_person
+											                                 {
+											                                 padding: 10px;
+											                                 color: #404040;
+											                                 font-size:15px;
+											                                 font-weight:700;
+											                                 }
+											                                 .review_title
+											                                 {
+											                                 color: #404040;
+											                                 font-size:15px;
+											                                 font-weight:700;
+											                                 }
+											                                 .review_content
+											                                 {
+											                                 color: #404040;
+											                                 font-size:15px;
+											                                 font-weight:400;
+											                                 line-height: 23px;
+											                                 padding-top: 10px;
+											                                 }
+											                                 .review_container
+											                                 {
+											                                 padding:20px;
+											                                 border: 1px solid #cccccc;
+											                                 }
+											                                 .reviews_blogs
+											                                 {
+											                                 margin-bottom: 25px;
+											                                 }
+											                                 .comment_date
+											                                 {
+											                                 font-size:15px;
+
+											                                 font-weight:400;
+											                                 color: #9A9A9A;
+											                                 margin-left: 10px;
+											                                 }
+											                                 .review_submit_div
+											                                 {
+											                                 float: left!important;
+											                                 }
+											                                 .cancel, .star
+											                                 {
+											                                 width: 25px;
+											                                 font-size: 21px;
+											                                 height: 21px;
+
+											                                 }
+
+											                                 .review_container
+											                                 {
+											                                 border: 1px solid #cccccc;
+											                                 padding: 20px;
+											                                 position: relative;
+											                                 }
+											                                 .review_container:after, .review_container:before
+											                                 {
+											                                 border: medium solid transparent;
+											                                 bottom: 100%;
+											                                 content: " ";
+											                                 height: 0;
+											                                 left: 7%;
+											                                 pointer-events: none;
+											                                 position: absolute;
+											                                 width: 0;
+											                                 }
+
+											                                 .review_container:after
+											                                 {
+											                                 border-color: rgba(136, 183, 213, 0) rgba(136, 183, 213, 0) #ffffff;
+											                                 border-width: 9px;
+											                                 margin-left: -22px;
+											                                 }
+											                                 .review_container:before
+											                                 {
+											                                 border-color: rgba(245, 233, 171, 0) rgba(245, 233, 171, 0) #cccccc;
+											                                 border-width: 11px;
+											                                 margin-left: -24px;
+											                                 }
+
+											</style>
+										</div>
+									</section>
+								</div><!-- end pb-left-column -->
+								<div class="pb-right-column col-xs-12 col-sm-4 col-md-4">
+									<p class="hidden"><input name="token" type="hidden" value="47a32cede234da58335b051b8c1df089"> <input id="product_page_product_id" name="id_product" type="hidden" value="8"> <input name="add" type="hidden" value="1"> <input id="idCombination" name="id_product_attribute" type="hidden" value=""></p>
+									<div class="booking-form">
+										<div class="total_booking_price_block">
+											<p class="booking_total_price"><span class="product_original_price">1 050,00 NT$</span> <span class="room_type_current_price" style="display:none;">1 050,00 NT$</span> /晚</p>
+										</div><!-- end content_prices -->
+										<div class="arrow-down-div">
+											<div class="arrow-down"></div>
+										</div><!-- by webkul -->
+										<div class="booking_room_fields">
+											<form action="" method="post"></form>
+										</div><!-- End -->
+										<div class="sold_out_alert" style="display: none;">
+											<span>售完 !!</span>
+										</div>
+										<div class="form-group unvail_rooms_cond_display">
+											<p class="buttons_bottom_block no-print" id="add_to_cart">
+											<button class="exclusive book_now_submit" name="Submit" type="button" onclick="location.href='index.php'">
+											<span>立即下訂</span>
+											</button>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div><!-- end primary_block -->
+						<!--            <section class="page-product-box">
+                <h3 class="page-product-heading">Data sheet</h3>
+                <table class="table-data-sheet">
+                                        <tr class="odd">
+                                                <td>Wi-Fi</td>
+                        <td>8.png</td>
+                                            </tr>
+                                        <tr class="even">
+                                                <td>News Paper</td>
+                        <td>9.png</td>
+                                            </tr>
+                                        <tr class="odd">
+                                                <td>Power BackUp</td>
+                        <td>10.png</td>
+                                            </tr>
+                                        <tr class="even">
+                                                <td>Refrigerator</td>
+                        <td>11.png</td>
+                                            </tr>
+                                    </table>
+            </section>
+         -->
+						<!--            <section class="page-product-box">
+                <h3 class="page-product-heading">More info</h3>
+                <div  class="rte">Fashion axe kogi yuccie, ramps shabby chic direct trade
+                before they sold out distillery bicycle rights. Slow-carb +1 quinoa VHS. +1 brunch trust fund, meggings
+                chartreuse sustainable everyday carry tumblr hoodie tacos tilde ramps post-ironic fixie.</div>
+            </section>
+         --><!-- by webkul commented -->
+						<!-- tab hook is shifted to left column -->
+						<!--end HOOK_PRODUCT_TAB -->
+						<!-- description & features -->
+					</div><!-- itemscope product wrapper -->
+				</div><!-- #center_column -->
+			</div><!-- .row -->
+		</div><!-- #columns -->
+	</div><!-- .columns-container -->
+<!-- Footer -->
+		<div class="footer-container">
+			<footer class="container" id="footer">
+				<div class="row margin-btm-50">
+					<div class="col-sm-3">
+						<!-- Block languages module -->
+						<div class="row"></div><!-- /Block languages module -->
+					</div>
+					<div class="col-sm-3">
+						<div class="row">
+							<section class="col-xs-12 col-sm-12">
+								<div class="row margin-lr-0 footer-section-heading">
+									<p>探索AMY HOTEL</p>
+									<hr>
+								</div>
+								<div class="row margin-lr-0">
+									<ul class="footer-explore-section">
+										<li class="item">
+											<a href="https://amy.com/hotel/index.php?page=legal" title="法律聲明">法律聲明</a>
+										</li>
+										<li class="item">
+											<a href="https://amy.com/hotel/index.php?page=terms" title="網站使用條款">網站使用條款</a>
+										</li>
+										<li class="item">
+											<a href="https://amy.com/hotel/index.php?page=about" title="關於我們">關於我們</a>
+										</li>
+										<li class="item">
+											<a href="https://amy.com/wordpress/2019/07/10/%e4%bb%98%e6%ac%be%e5%ae%89%e5%85%a8%e8%aa%aa%e6%98%8e/" title="付款安全說明">付款安全說明</a>
+										</li>
+										<li class="item">
+											<a href="https://amy.com/wordpress/2019/07/10/%E4%BB%98%E6%AC%BE%E4%BA%A4%E6%98%93%E8%AA%AA%E6%98%8E/" title="付款交易說明">付款交易說明</a>
+										</li>
+									</ul>
+								</div>
+							</section>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="row">
+							<section class="col-xs-12 col-sm-12">
+								<div class="row margin-lr-0 footer-section-heading">
+									<p>關於AMY HOTEL</p>
+									<hr>
+								</div>
+								<div class="row margin-lr-0 footer-about-hotel">
+									<p>I Will Never Let You Go</p>
+								</div>
+							</section>
+						</div>
+						<div class="row">
+							<section class="col-xs-12 col-sm-12">
+								<div class="row margin-lr-0 footer-section-heading">
+									<p>付款資訊</p>
+									<hr>
+								</div>
+								<div class="row margin-lr-0 footer-payment-block">
+								<img src="/hotel/modules/wkfooterpaymentblock//views/img/payment_img/2.jpg"> 
+								<img src="/hotel/modules/wkfooterpaymentblock//views/img/payment_img/4.jpg"> 
+								</div>
+							</section>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<!-- Block Newsletter module-->
+						<div class="row"></div><!-- /Block Newsletter module-->
+						<div class="row">
+							<section class="col-xs-12 col-sm-12">
+								<div class="row margin-lr-0 footer-section-heading">
+									<p>關注我們</p>
+									<hr>
+								</div>
+								<div class="row margin-lr-0" id="social_block">
+									<ul>
+										<li class="facebook">
+											<a class="_blank" href="https://www.facebook.com/" target="_blank"><span>Facebook</span></a>
+										</li>
+										<li class="twitter">
+											<a class="_blank" href="https://twitter.com/" target="_blank"><span>Twitter</span></a>
+										</li>
+									</ul>
+									<div class="clearfix"></div>
+								</div>
+							</section>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<div class="copyRightWrapper">
+				<p class="copyRight">© 2019-2019&nbsp;<a href="https://amy.com/hotel/">&nbsp;Hotel AMY</a>.&nbsp; All rights reserved.</p>
+			</div>
+		</div><!-- #footer -->
+	<!-- #page -->
+	<div class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" id="ui-datepicker-div">
+		<div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all">
+			<a class="ui-datepicker-prev ui-corner-all" data-event="click" data-handler="prev" title="Prev"><span class="ui-icon ui-icon-circle-triangle-w">Prev</span></a><a class="ui-datepicker-next ui-corner-all" data-event="click" data-handler="next" title="Next"><span class="ui-icon ui-icon-circle-triangle-e">Next</span></a>
+			<div class="ui-datepicker-title">
+				<span class="ui-datepicker-month">March</span>&nbsp;<span class="ui-datepicker-year">2019</span>
+			</div>
+		</div>
+		<table class="ui-datepicker-calendar">
+			<thead>
+				<tr>
+					<th class="ui-datepicker-week-end"><span title="Sunday">Su</span></th>
+					<th><span title="Monday">Mo</span></th>
+					<th><span title="Tuesday">Tu</span></th>
+					<th><span title="Wednesday">We</span></th>
+					<th><span title="Thursday">Th</span></th>
+					<th><span title="Friday">Fr</span></th>
+					<th class="ui-datepicker-week-end"><span title="Saturday">Sa</span></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled"><span class="ui-state-default">24</span></td>
+					<td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled"><span class="ui-state-default">25</span></td>
+					<td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled"><span class="ui-state-default">26</span></td>
+					<td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled"><span class="ui-state-default">27</span></td>
+					<td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled"><span class="ui-state-default">28</span></td>
+					<td class="" data-event="click" data-handler="selectDay" data-month="2" data-year="2019">
+						<a class="ui-state-default" href="#">1</a>
+					</td>
+					<td class=" ui-datepicker-week-end" data-event="click" data-handler="selectDay" data-month="2" data-year="2019">
+						<a class="ui-state-default" href="#">2</a>
+					</td>
+				</tr>
+				<tr>
+					<td class=" ui-datepicker-week-end" data-event="click" data-handler="selectDay" data-month="2" data-year="2019">
+						<a class="ui-state-default" href="#">3</a>
+					</td>
+					<td class="" data-event="click" data-handler="selectDay" data-month="2" data-year="2019">
+						<a class="ui-state-default" href="#">4</a>
+					</td>
+					<td class="" data-event="click" data-handler="selectDay" data-month="2" data-year="2019">
+						<a class="ui-state-default" href="#">5</a>
+					</td>
+					<td class="" data-event="click" data-handler="selectDay" data-month="2" data-year="2019">
+						<a class="ui-state-default" href="#">6</a>
+					</td>
+					<td class="" data-event="click" data-handler="selectDay" data-month="2" data-year="2019">
+						<a class="ui-state-default" href="#">7</a>
+					</td>
+					<td class="" data-event="click" data-handler="selectDay" data-month="2" data-year="2019">
+						<a class="ui-state-default" href="#">8</a>
+					</td>
+					<td class=" ui-datepicker-week-end ui-datepicker-today" data-event="click" data-handler="selectDay" data-month="2" data-year="2019">
+						<a class="ui-state-default ui-state-highlight" href="#">9</a>
+					</td>
+				</tr>
+				<tr>
+					<td class=" ui-datepicker-week-end selectedCheckedDate ui-datepicker-current-day" data-event="click" data-handler="selectDay" data-month="2" data-year="2019" title="Check-In date">
+						<a class="ui-state-default ui-state-active" href="#">10</a>
+					</td>
+					<td class="" data-event="click" data-handler="selectDay" data-month="2" data-year="2019">
+						<a class="ui-state-default" href="#">11</a>
+					</td>
+					<td class="" data-event="click" data-handler="selectDay" data-month="2" data-year="2019">
+						<a class="ui-state-default" href="#">12</a>
+					</td>
+					<td class="" data-event="click" data-handler="selectDay" data-month="2" data-year="2019">
+						<a class="ui-state-default" href="#">13</a>
+					</td>
+					<td class="" data-event="click" data-handler="selectDay" data-month="2" data-year="2019">
+						<a class="ui-state-default" href="#">14</a>
+					</td>
+					<td class="" data-event="click" data-handler="selectDay" data-month="2" data-year="2019">
+						<a class="ui-state-default" href="#">15</a>
+					</td>
+					<td class=" ui-datepicker-week-end" data-event="click" data-handler="selectDay" data-month="2" data-year="2019">
+						<a class="ui-state-default" href="#">16</a>
+					</td>
+				</tr>
+				<tr>
+					<td class=" ui-datepicker-week-end" data-event="click" data-handler="selectDay" data-month="2" data-year="2019">
+						<a class="ui-state-default" href="#">17</a>
+					</td>
+					<td class="" data-event="click" data-handler="selectDay" data-month="2" data-year="2019">
+						<a class="ui-state-default" href="#">18</a>
+					</td>
+					<td class="" data-event="click" data-handler="selectDay" data-month="2" data-year="2019">
+						<a class="ui-state-default" href="#">19</a>
+					</td>
+					<td class="" data-event="click" data-handler="selectDay" data-month="2" data-year="2019">
+						<a class="ui-state-default" href="#">20</a>
+					</td>
+					<td class="" data-event="click" data-handler="selectDay" data-month="2" data-year="2019">
+						<a class="ui-state-default" href="#">21</a>
+					</td>
+					<td class="" data-event="click" data-handler="selectDay" data-month="2" data-year="2019">
+						<a class="ui-state-default" href="#">22</a>
+					</td>
+					<td class=" ui-datepicker-week-end" data-event="click" data-handler="selectDay" data-month="2" data-year="2019">
+						<a class="ui-state-default" href="#">23</a>
+					</td>
+				</tr>
+				<tr>
+					<td class=" ui-datepicker-week-end" data-event="click" data-handler="selectDay" data-month="2" data-year="2019">
+						<a class="ui-state-default" href="#">24</a>
+					</td>
+					<td class="" data-event="click" data-handler="selectDay" data-month="2" data-year="2019">
+						<a class="ui-state-default" href="#">25</a>
+					</td>
+					<td class="" data-event="click" data-handler="selectDay" data-month="2" data-year="2019">
+						<a class="ui-state-default" href="#">26</a>
+					</td>
+					<td class="" data-event="click" data-handler="selectDay" data-month="2" data-year="2019">
+						<a class="ui-state-default" href="#">27</a>
+					</td>
+					<td class="" data-event="click" data-handler="selectDay" data-month="2" data-year="2019">
+						<a class="ui-state-default" href="#">28</a>
+					</td>
+					<td class="" data-event="click" data-handler="selectDay" data-month="2" data-year="2019">
+						<a class="ui-state-default" href="#">29</a>
+					</td>
+					<td class=" ui-datepicker-week-end" data-event="click" data-handler="selectDay" data-month="2" data-year="2019">
+						<a class="ui-state-default" href="#">30</a>
+					</td>
+				</tr>
+				<tr>
+					<td class=" ui-datepicker-week-end" data-event="click" data-handler="selectDay" data-month="2" data-year="2019">
+						<a class="ui-state-default" href="#">31</a>
+					</td>
+					<td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled"><span class="ui-state-default">1</span></td>
+					<td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled"><span class="ui-state-default">2</span></td>
+					<td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled"><span class="ui-state-default">3</span></td>
+					<td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled"><span class="ui-state-default">4</span></td>
+					<td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled"><span class="ui-state-default">5</span></td>
+					<td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled"><span class="ui-state-default">6</span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

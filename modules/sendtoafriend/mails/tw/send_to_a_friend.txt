@@ -1,0 +1,11 @@
+
+[{shop_url}] 
+
+{name} 您好,
+
+點擊這裡查看資料： {product}
+[{product_link}] 
+
+{shop_name} [{shop_url}] 技術支持提供:
+Webkul(tm) [https://webkul.com] 
+
